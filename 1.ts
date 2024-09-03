@@ -5,7 +5,10 @@ function pyramid(height: number){
     for (let i = 1; i <= height; i++) {
         let row: string = '';
         for (let j = 1; j <= i; j++) {
-            row += number.toString().length === 1 ? '0' + number.toString() : number.toString();
+            // ES2016
+            // row += number.toString().length === 1 ? '0' + number.toString() : number.toString();
+            // ES2017
+            row += number.toString().padStart(2, '0');
             number++;
         }
         console.log(row); // Print the row
